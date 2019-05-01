@@ -26,7 +26,7 @@ const Image = styled.img`
 
 const BookItem = props => {
     return(
-        <Link to={`home/bookview/${props.book.id}`}>
+        <Link to={`book/${props.book.id}`}>
             <StyledBook key={props.book.id}>
                 <h3>{props.book.title}</h3>
                 <Image src ={props.book.image} alt="book"/>
