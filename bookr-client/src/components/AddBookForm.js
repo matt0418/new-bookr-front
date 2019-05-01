@@ -13,6 +13,8 @@ const AddBookForm = props => {
             description: props.newBookInfo.description,
             price: props.newBookInfo.price
         })
+        props.history.push('/')
+
     }
 
     return (

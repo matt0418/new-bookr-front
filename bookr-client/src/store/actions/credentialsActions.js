@@ -15,6 +15,7 @@ export const userLogin = inputLogin => dispatch => {
         .post(endpoint, inputLogin)
         .then(res => {
             localStorage.setItem('jwt', res.data.token)
+            localStorage.setItem('userId', res.data.id)
             dispatch({ type: SUCCESS_LOGIN_USER, payload: res.data.token })
         })
         .catch(err => {

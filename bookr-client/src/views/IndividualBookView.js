@@ -1,24 +1,37 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { connect } from 'react-redux'
 import { fetchSingleBook, deleteBook } from '../store/actions/bookActions' 
 import IndividualBook from '../components/IndividualBook'
 import { withRouter } from 'react-router-dom'
+import CommentForm from '../components/CommentForm'
 
 
 const IndividualBookView = props => {
     const id = props.match.params.id
+    const [count, setCount] = useState(0)
+
+    const incrementCount = e => {
+        setCount(count + 1)
+    }
+    
     useEffect(() => {
         props.fetchSingleBook(id)
-    }, [])
-
-    console.log(props)
+    },[count])
 
     return (
-        <IndividualBook 
-        {...props}
-        book={props.book}
-        deleteBook={props.deleteBook}
-        />
+        <div>
+            <IndividualBook 
+                {...props}
+                book={props.book}
+                deleteBook={props.deleteBook}
+            />
+            <CommentForm 
+                {...props}
+                bookID = {id}
+                incrementCount = {incrementCount}
+            />
+        </div>
+       
     )
 }
 
