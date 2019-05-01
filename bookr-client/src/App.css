@@ -2,32 +2,61 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.Modal {
+  position: fixed;
+  /* top: 10%;
+  left: 25%; */
+  top: 25%;
+  left: 10%;
+  width: 80%;
+  height: 400px;
+  background-color: white;
+  z-index: 1;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px 2px #00000050;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #656176;
+  opacity: 0.5;
+}
+
+.modal {
+  color: #4a4a4a;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  border-radius: 100px;
+  padding: 20px 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.App-link {
-  color: #61dafb;
+.closeModalButton {
+  position: relative;
+  width: 10%;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #4a4a4a;
+  top: 0;
+  right: 0;
+  margin-left: 90%;
+  margin-top: -150px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
 }

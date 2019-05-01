@@ -53,7 +53,7 @@ export const fetchSingleBook = id => dispatch => {
 export const deleteBook = id => dispatch => {
     dispatch({ type: DELETE_BOOK_START, payload: id })
     API
-        .delete(`books/${id}`)
+        .delete(`books/${id}`, requestOptions)
         .then(res => {
             console.log(res)
             dispatch({ type: DELETE_BOOK_SUCCESS })
