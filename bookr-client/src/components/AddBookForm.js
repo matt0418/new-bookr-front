@@ -1,7 +1,8 @@
 import React from 'react'
+import styled from 'styled-components'
+import NavBar from './NavBar'
 
 const AddBookForm = props => {
-    console.log(props, 'addbook')
     
     const handleSumbit = e => {
         e.preventDefault()
@@ -19,53 +20,91 @@ const AddBookForm = props => {
 
     return (
         <div>
-            <form onSubmit={handleSumbit}>
-                <input 
+            <NavBar />
+            <StyledHeader>Add a New Book</StyledHeader>
+            <StyledForm onSubmit={handleSumbit}>
+                <StyledInput 
                 type="text"
                 name="title"
                 placeholder="enter book title"
                 value={props.newBookInfo.title}
                 onChange={props.handleChanges}
                 />
-                <input 
+                <StyledInput 
                 type="text"
                 name="author"
                 placeholder="enter author"
                 value={props.newBookInfo.author}
                 onChange={props.handleChanges}
                 />
-                <input 
+                <StyledInput 
                 type="text"
                 name="publisher"
                 placeholder="enter publisher"
                 value={props.newBookInfo.publisher}
                 onChange={props.handleChanges}
                 />
-                <input 
+                <StyledInput 
                 type="text"
                 name="image"
                 placeholder="enter image url"
                 value={props.newBookInfo.image}
                 onChange={props.handleChanges}
                 />
-                <input 
+                <StyledInput 
                 type="text"
                 name="description"
                 placeholder="enter book description"
                 value={props.newBookInfo.description}
                 onChange={props.handleChanges}
                 />
-                <input 
+                <StyledInput 
                 type="number"
                 name="price"
                 placeholder="enter book price"
                 value={props.newBookInfo.price}
                 onChange={props.handleChanges}
                 />
-                <button type="submit">Add Book</button>
-            </form>
+                <StyledButton type="submit">Add Book</StyledButton>
+            </StyledForm>
         </div>
     )
 }
 
 export default AddBookForm
+
+const StyledHeader = styled.div`
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-bottom: 1px solid black;
+    padding-bottom: 3%;
+    width: 80%;
+    margin-left: 10%;
+`
+
+const StyledForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15%;
+`
+const StyledInput = styled.input`
+    width: 50%
+    padding: .5%;
+    font-size: 20px;
+    margin-bottom: 1.5%;
+`
+
+const StyledButton = styled.button`
+    width: 200px;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    border-radius: 10px;
+    background: #907163;
+    color: white;
+    font-weight: bold;
+`

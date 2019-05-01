@@ -4,6 +4,7 @@ import { fetchSingleBook, deleteBook } from '../store/actions/bookActions'
 import IndividualBook from '../components/IndividualBook'
 import { withRouter } from 'react-router-dom'
 import CommentForm from '../components/CommentForm'
+import NavBar from '../components/NavBar'
 
 
 const IndividualBookView = props => {
@@ -20,6 +21,7 @@ const IndividualBookView = props => {
 
     return (
         <div>
+            <NavBar />
             <IndividualBook 
                 {...props}
                 book={props.book}

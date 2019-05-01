@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react'
+import React, { useReducer } from 'react'
 import Login from '../components/Login'
 import { connect } from 'react-redux'
 import { userLogin } from '../store/actions/credentialsActions' 
@@ -27,9 +27,6 @@ const LoginView = props => {
 
     return(
         <div> 
-                This is login view 
-            {/* <input name='username' value={state.username} onChange={handleChanges}/>
-            <input name='password' value={state.password} onChange={handleChanges}/> */}
             <Login 
             {...props} 
             loginInfo={state} 

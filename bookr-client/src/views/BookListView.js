@@ -1,28 +1,30 @@
 import React, {useEffect} from 'react'
 import requireAuth from '../requireAuth/requireAuth'
 import LoginView from './LoginView'
-import Logout from '../components/Logout'
 import { connect } from 'react-redux'
 import { userLogout } from '../store/actions/credentialsActions'
 import { fetchBooks } from '../store/actions/bookActions'
 import ListOfBooks from '../components/ListOfBooks'
+import NavBar from '../components/NavBar'
+import Jumbo from '../components/Jumbo'
 
 
 const BookListView = props => {
 
+    
     useEffect(() => {
-        props.fetchBooks()
+        if (localStorage.jwt) {
+            props.fetchBooks()
+        }
     },[])
-
-    console.log(props.books)
-
 
 
     if (localStorage.jwt !== undefined) {
         return(
             <div>
+                <NavBar />
+                <Jumbo />
                 <ListOfBooks {...props}/>
-                <Logout logout={props.userLogout}/>
             </div>
         )
     } else {

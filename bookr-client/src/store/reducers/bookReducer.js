@@ -5,12 +5,12 @@ import {
     FETCH_BOOK_START,
     FETCH_BOOK_SUCCESS,
     FETCH_BOOK_ERROR,
-    DELETE_BOOK_START,
-    DELETE_BOOK_SUCCESS,
-    DELETE_BOOK_ERROR,
-    ADD_BOOK_START,
-    ADD_BOOK_SUCCESS,
-    ADD_BOOK_ERROR
+    // DELETE_BOOK_START,
+    // DELETE_BOOK_SUCCESS,
+    // DELETE_BOOK_ERROR,
+    // ADD_BOOK_START,
+    // ADD_BOOK_SUCCESS,
+    // ADD_BOOK_ERROR
 } from '../actions/bookActions'
 
 const initialState = {
