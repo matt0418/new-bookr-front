@@ -1,0 +1,4 @@
+[build]
+base = "bookr-client/"
+publish = "bookr-client/build/"
+command = "yarn build"
